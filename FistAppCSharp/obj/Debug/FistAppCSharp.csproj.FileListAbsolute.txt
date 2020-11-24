@@ -1,0 +1,10 @@
+C:\Users\admin\Desktop\YouCode 2020-2021\FistAppCSharp\FistAppCSharp\bin\Debug\FistAppCSharp.exe.config
+C:\Users\admin\Desktop\YouCode 2020-2021\FistAppCSharp\FistAppCSharp\bin\Debug\FistAppCSharp.exe
+C:\Users\admin\Desktop\YouCode 2020-2021\FistAppCSharp\FistAppCSharp\bin\Debug\FistAppCSharp.pdb
+C:\Users\admin\Desktop\YouCode 2020-2021\FistAppCSharp\FistAppCSharp\obj\Debug\FistAppCSharp.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\YouCode 2020-2021\FistAppCSharp\FistAppCSharp\obj\Debug\FistAppCSharp.Form1.resources
+C:\Users\admin\Desktop\YouCode 2020-2021\FistAppCSharp\FistAppCSharp\obj\Debug\FistAppCSharp.Properties.Resources.resources
+C:\Users\admin\Desktop\YouCode 2020-2021\FistAppCSharp\FistAppCSharp\obj\Debug\FistAppCSharp.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\YouCode 2020-2021\FistAppCSharp\FistAppCSharp\obj\Debug\FistAppCSharp.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\YouCode 2020-2021\FistAppCSharp\FistAppCSharp\obj\Debug\FistAppCSharp.exe
+C:\Users\admin\Desktop\YouCode 2020-2021\FistAppCSharp\FistAppCSharp\obj\Debug\FistAppCSharp.pdb
