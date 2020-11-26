@@ -131,6 +131,9 @@ namespace FistAppCSharp
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
 
+                //Update the Number Of Existing Students 
+                CountStudents();
+
                 con.Close();
                 MessageBox.Show("Inserted");
 
@@ -171,6 +174,15 @@ namespace FistAppCSharp
 
 
         }
+
+        //Count Number Of Students
+        public void CountStudents()
+        {
+            cmd = new SqlCommand("select count(*) from Apprenant", con);
+            lbl_NumTotal.Text = cmd.ExecuteScalar().ToString();
+            
+
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             connetionString = @"Server=DESKTOP-U1C50GP\SQLEXPRESS;Database=Aprenant;Trusted_Connection=True";
@@ -184,6 +196,8 @@ namespace FistAppCSharp
                 RemplirCMB();
                 //Fill My DataGridView
                 RemplirDGV();
+
+                CountStudents();
                 con.Close();
             }
             catch (Exception ex)
@@ -353,7 +367,7 @@ namespace FistAppCSharp
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -361,24 +375,71 @@ namespace FistAppCSharp
             //selected row 
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                string Idstudent = dataGridView1.SelectedRows[0].Cells[1].Value + string.Empty;
-                string name = dataGridView1.SelectedRows[0].Cells[2].Value + string.Empty;
-                string prenom = dataGridView1.SelectedRows[0].Cells[3].Value + string.Empty;
-                string email = dataGridView1.SelectedRows[0].Cells[4].Value + string.Empty;
-                string telephone = dataGridView1.SelectedRows[0].Cells[5].Value + string.Empty;
+                string Idstudent = dataGridView1.SelectedRows[0].Cells[0].Value + string.Empty;
+                string name = dataGridView1.SelectedRows[0].Cells[1].Value + string.Empty;
+                string prenom = dataGridView1.SelectedRows[0].Cells[2].Value + string.Empty;
+                string email = dataGridView1.SelectedRows[0].Cells[3].Value + string.Empty;
+                string telephone = dataGridView1.SelectedRows[0].Cells[4].Value + string.Empty;
                 //string date_Naissance = dataGridView1.SelectedRows[0].Cells[4].Value + string.Empty;
+                //DateTime Date_Naissance = Convert.ToDateTime(dataGridView1.SelectedRows[0].Cells[4].Value.ToString());
                 string pays = dataGridView1.SelectedRows[0].Cells[7].Value + string.Empty;
                 string ville = dataGridView1.SelectedRows[0].Cells[8].Value + string.Empty;
                 string Choix = dataGridView1.SelectedRows[0].Cells[9].Value + string.Empty;
 
-                textBox1.Text = Idstudent;
-                textBox2.Text = name;
+                comboBox4.Text = Idstudent;
+                textBox1.Text = name;
+                textBox2.Text = prenom;
+                textBox5.Text = email;
+                textBox4.Text = telephone;
                 comboBox2.Text = pays;
                 comboBox3.Text = ville;
-                textBox5.Text = email;
-                //dateTimePicker1.Text = date_Naissance.ToString();
+                comboBox1.Text =  Choix;
+
+                getBirthday(Idstudent);
 
             }
+        }
+
+        //GetDate
+        public void getBirthday(string id)
+        {
+            con.Open();
+            cmd = new SqlCommand("select birthday from Apprenant where id =" +id, con);
+            cmd.ExecuteNonQuery();
+            string com = cmd.ExecuteScalar().ToString();
+            con.Close();
+            dateTimePicker1.Value = Convert.ToDateTime(com);
+        }
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Choice = comboBox5.Text;
+                String query = "";
+                if (Choice == "All")
+                {
+                    query = "(select * from Apprenant )";
+                }
+                else
+                {
+                    query = "(select * from Apprenant where choice ='" + Choice + "' )";
+                }
+                con.Open();
+                cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                string com = cmd.ExecuteScalar().ToString();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                da.Fill(dataTable);
+                dataGridView1.DataSource = dataTable;
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("");
+            }
+
         }
     }
 }

@@ -54,6 +54,10 @@ namespace FistAppCSharp
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Update = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_NumTotal = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -224,9 +228,9 @@ namespace FistAppCSharp
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(15, 217);
+            this.listView1.Location = new System.Drawing.Point(13, 263);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(496, 210);
+            this.listView1.Size = new System.Drawing.Size(743, 210);
             this.listView1.TabIndex = 9;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -252,7 +256,7 @@ namespace FistAppCSharp
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 217);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 263);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(743, 210);
             this.dataGridView1.TabIndex = 12;
@@ -278,11 +282,58 @@ namespace FistAppCSharp
             this.label9.TabIndex = 14;
             this.label9.Text = "Search";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.label10.Location = new System.Drawing.Point(553, 223);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(155, 26);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Nombre Total :";
+            // 
+            // lbl_NumTotal
+            // 
+            this.lbl_NumTotal.AutoSize = true;
+            this.lbl_NumTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.lbl_NumTotal.Location = new System.Drawing.Point(730, 223);
+            this.lbl_NumTotal.Name = "lbl_NumTotal";
+            this.lbl_NumTotal.Size = new System.Drawing.Size(26, 26);
+            this.lbl_NumTotal.TabIndex = 15;
+            this.lbl_NumTotal.Text = "--";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "All",
+            "JEE",
+            "C#",
+            "FrontEnd/BackEnd"});
+            this.comboBox5.Location = new System.Drawing.Point(121, 230);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(121, 21);
+            this.comboBox5.TabIndex = 16;
+            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(12, 233);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(103, 13);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "rechearch par filiere ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 451);
+            this.ClientSize = new System.Drawing.Size(770, 485);
+            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.lbl_NumTotal);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.dataGridView1);
@@ -341,6 +392,10 @@ namespace FistAppCSharp
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button Update;
+        private System.Windows.Forms.Label lbl_NumTotal;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label label11;
     }
 }
 
