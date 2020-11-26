@@ -350,10 +350,7 @@ namespace FistAppCSharp
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("Student by Id " + IdStudent + " updated successfully");
-
-               
-                
+                MessageBox.Show("Student by Id " + IdStudent + " updated successfully"); 
                 //cmd = new SqlCommand("select * from Apprenant where id ="+IdStudent);
 
 
@@ -434,6 +431,8 @@ namespace FistAppCSharp
                 da.Fill(dataTable);
                 dataGridView1.DataSource = dataTable;
                 con.Close();
+
+                lbl_NumTotal.Text = dataGridView1.Rows.Count.ToString();
             }
             catch(Exception ex)
             {
